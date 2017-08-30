@@ -1,3 +1,30 @@
-<p>
-  stud-list works!
-</p>
+<div id="listStud">
+  <button id="listStudent" (click)="listStudent()">
+    List Student
+  </button>
+</div>
+<div>
+  {{ messages }}
+</div>
+<div *ngIf="printing">
+  <table>
+    <thead>
+      <tr>
+        <th>Student Number</th>
+        <th>Student First Name</th>
+        <th>Student Last Name</th>
+        <th>Student Program</th>
+        <th>Student Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let studentRecord of StudentCollection">
+        <td>{{ studentRecord.studNumber }}</td>
+        <td>{{ studentRecord.studFirstName }}</td>
+        <td>{{ studentRecord.studLastName }}</td>
+        <td>{{ studentRecord.studProgram }}</td>
+        <td>{{ studentRecord.studYear }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
